@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/footer.css";
-import Resume from "../assets/resume.png";
+
 
 function Footer() {
   return (
