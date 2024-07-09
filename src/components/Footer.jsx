@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/footer.css";
 
-
 function Footer() {
   return (
     <footer>
@@ -10,6 +9,7 @@ function Footer() {
       <a
         href="https://github.com/arunmishra11"
         target="_blank"
+        rel="noreferrer"
         className="icon-container"
       >
         <i className="bi bi-github"></i>
@@ -19,14 +19,17 @@ function Footer() {
       <a
         href="https://www.linkedin.com/in/arun-mishra-558367110/"
         target="_blank"
+        rel="noreferrer"
         className="icon-container"
       >
         <i className="bi bi-linkedin"></i>
         <p>LinkedIn</p>
       </a>
 
-      <a href="https://x.com/home"
+      <a
+        href="https://x.com/home"
         target="_blank"
+        rel="noreferrer"
         className="icon-container"
       >
         <i className="bi bi-twitter"></i>

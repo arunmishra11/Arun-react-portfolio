@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "../styles/navbar.css";
 import Resume from "../assets/resume.pdf";
-import Header from "./Header";
 
 function Navbar({ currentPage, handlePageChange }) {
   // State for whether the hamburger menu is active
-  const [isActive, setActive] = useState("false");
+  const [isActive, setActive] = useState(false);
 
   const handleToggle = () => {
     setActive(!isActive);
@@ -13,7 +12,7 @@ function Navbar({ currentPage, handlePageChange }) {
 
   return (
     <nav className="navbar">
-      <ul className={`nav-menu ${isActive ? "" : "active"}`}>
+      <ul className={`nav-menu ${isActive ? "active" : ""}`}>
         <li className="nav-item">
           <a
             onClick={() => {
@@ -58,10 +57,9 @@ function Navbar({ currentPage, handlePageChange }) {
         </li>
         <li className="nav-item">
           <a
-            onClick={handleToggle}
             href={Resume}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="nav-link"
           >
             Resume
@@ -70,7 +68,7 @@ function Navbar({ currentPage, handlePageChange }) {
       </ul>
 
       <div
-        className={`hamburger ${isActive ? "" : "active"}`}
+        className={`hamburger ${isActive ? "active" : ""}`}
         onClick={handleToggle}
       >
         <span className="bar"></span>

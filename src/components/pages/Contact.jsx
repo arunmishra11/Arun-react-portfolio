@@ -15,19 +15,19 @@ export const Contact = () => {
     e.preventDefault();
 
     // Checks if name is empty
-    if (form.current[0].value === "") {
+    if (form.current.user_name.value === "") {
       Swal.fire("Uh oh!", "Name can't be left blank.", "error");
       return;
     }
 
     // Checks if email is empty
-    if (form.current[1].value === "") {
+    if (form.current.user_email.value === "") {
       Swal.fire("Uh oh!", "Email can't be left blank.", "error");
       return;
     }
 
     // Checks if message is empty
-    if (form.current[2].value === "") {
+    if (form.current.message.value === "") {
       Swal.fire("Uh oh!", "Message can't be left blank.", "error");
       return;
     }
@@ -51,12 +51,15 @@ export const Contact = () => {
 
       <div className="contact-container">
         <form ref={form} onSubmit={sendEmail}>
-          <label>Name</label>
-          <input type="text" name="user_name" />
-          <label>Email</label>
-          <input type="email" name="user_email" />
-          <label>Message</label>
-          <textarea name="message" />
+          <label htmlFor="user_name">Name</label>
+          <input type="text" id="user_name" name="user_name" required />
+
+          <label htmlFor="user_email">Email</label>
+          <input type="email" id="user_email" name="user_email" required />
+
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+
           <input className="form-btn" type="submit" value="Send" />
         </form>
 
@@ -68,7 +71,8 @@ export const Contact = () => {
             <span className="bold">Title: </span>Full Stack Software Engineer
           </p>
           <p>
-            <span className="bold">Email: </span>arunmishra305@gmail.com
+            <span className="bold">Email: </span>
+            <a href="mailto:arunmishra305@gmail.com">arunmishra305@gmail.com</a>
           </p>
           <p>
             <span className="bold">Phone: </span>(123) 456-7890
@@ -78,6 +82,7 @@ export const Contact = () => {
             <a
               href="https://www.linkedin.com/in/arun-mishra-558367110/"
               target="_blank"
+              rel="noopener noreferrer"
               className="social-link"
             >
               Arun Mishra
@@ -88,6 +93,7 @@ export const Contact = () => {
             <a
               href="https://github.com/arunmishra11"
               target="_blank"
+              rel="noopener noreferrer"
               className="social-link"
             >
               arunmishra11
